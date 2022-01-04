@@ -7,6 +7,7 @@ async function sendMail(req,res){
 
         try {
             if(to.length > 0){
+
                 var destination = to.join(',')
                 console.log(destination)
             }
@@ -29,5 +30,6 @@ async function sendMail(req,res){
         res.status(500).send({success: false, error: "Error sending the e-mail"})
     }
 }
+
 
 module.exports.sendMail = sendMail
