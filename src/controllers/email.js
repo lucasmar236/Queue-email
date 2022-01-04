@@ -7,8 +7,9 @@ async function sendMail(req,res){
 
         try {
             if(to.length > 0){
-              var destination = to.join(',')
-              console.log(destination)
+
+                var destination = to.join(',')
+                console.log(destination)
             }
         }catch{
             res.status(400).send({success: false})
@@ -16,9 +17,9 @@ async function sendMail(req,res){
 
         let info = await mail.sendMail({
             from: process.env.FROM_EMAIL, // sender address
-            to: "bar@example.com, baz@example.com", // list of receivers
-            subject: "Hello ✔", // Subject line
-            text: "Hello world?", // plain text body
+            to: destination, // list of receivers
+            subject: subject, // Subject line
+            text: text, // plain text body
             html: "<b>Hello world?</b>", // html body
         })
         console.log("Message sent: %s", info.messageId);
@@ -29,5 +30,6 @@ async function sendMail(req,res){
         res.status(500).send({success: false, error: "Error sending the e-mail"})
     }
 }
+
 
 module.exports.sendMail = sendMail
