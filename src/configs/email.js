@@ -1,8 +1,8 @@
 module.exports = {
-    host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+    host: process.env.HOST_EMAIL,
+    port : process.env.PORT_EMAIL,
+    auth:{
+        user : process.env.USER_EMAIL,
+        pass: process.env.PASS_EMAIL
     }
 }

@@ -3,4 +3,4 @@ const emailConfig = require('../configs/email')
 
 const transporter = mail.createTransport(emailConfig)
 
-module.exports.transporter = transporter
+module.exports.mail = transporter
